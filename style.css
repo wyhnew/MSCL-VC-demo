@@ -1,124 +1,251 @@
-   /* 基础样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+/* 基础重置与字体 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-        body {
-            background-color: #f5f7fa;
-            line-height: 1.6;
-            color: #333;
-            padding: 20px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        /* 头部样式 */
-        header {
-            text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #e1e4e8;
-        }
+/* 色彩系统 */
+:root {
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    --surface-1: #f8fafc;
+    --surface-2: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+}
 
-        h1 {
-            color: #2c3e50;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+/* 整体布局 */
+body {
+    background: var(--surface-1);
+    color: var(--text-primary);
+    line-height: 1.7;
+    padding: 2rem;
+    min-height: 100vh;
+}
 
-        /* 内容区块 */
-        section {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            padding: 2rem;
-            margin: 2rem 0;
-            transition: transform 0.2s;
-        }
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
 
-        section:hover {
-            transform: translateY(-3px);
-        }
+/* 头部样式 */
+header {
+    text-align: center;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+    background: var(--primary-gradient);
+    border-radius: 1.5rem;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    transform: translateY(-1rem);
+    animation: header-entry 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 
-        h2 {
-            color: #3498db;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #ecf0f1;
-        }
+@keyframes header-entry {
+    0% { transform: translateY(-3rem); opacity: 0; }
+    100% { transform: translateY(-1rem); opacity: 1; }
+}
 
-        /* 表格样式 */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.2rem;
+}
 
-        th, td {
-            padding: 1rem;
-            text-align: center;
-            border: 1px solid #ecf0f1;
-        }
+header p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
 
-        th {
-            background-color: #3498db;
-            color: white;
-            font-weight: 600;
-        }
+/* 内容区块 */
+section {
+    background: var(--surface-2);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.12);
+}
 
-        /* 音频控件 */
-        audio {
-            width: 100%;
-            max-width: 160px;
-            transition: opacity 0.2s;
-        }
+h2 {
+    color: var(--text-primary);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    position: relative;
+}
 
-        audio:hover {
-            opacity: 0.9;
-        }
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: var(--primary-gradient);
+}
 
-        /* 页脚样式 */
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: #7f8c8d;
-            margin-top: 3rem;
-        }
+/* 高级表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface-2);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    position: relative;
+}
 
-        footer a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
+th, td {
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
 
-        footer a:hover {
-            color: #2980b9;
-        }
+th {
+    background: rgba(99, 102, 241, 0.08);
+    color: #6366f1;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+    border-bottom: 2px solid var(--border-color);
+}
 
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
-            }
+td {
+    border-bottom: 1px solid var(--border-color);
+}
 
-            section {
-                padding: 1rem;
-            }
+tr:last-child td {
+    border-bottom: none;
+}
 
-            table {
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-        }
+tr:hover td {
+    background: rgba(248, 250, 252, 0.6);
+}
+
+/* 自定义音频控件 */
+audio {
+    width: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+audio::-webkit-media-controls-panel {
+    background: rgba(248, 250, 252, 0.8);
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: #6366f1;
+    border-radius: 50%;
+}
+
+audio:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    section {
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    audio {
+        width: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 3rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    th, td {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
