@@ -1,124 +1,243 @@
-<!DOCTYPE html> 
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>MSCL-VC Demo</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Conversion Demo</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            overflow-x: auto;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin: 0 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        table {
+            width: 100%;
+            min-width: 900px;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: center;
+            vertical-align: middle;
+            width: 12.5%;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 180px;
+            transition: transform 0.2s;
+        }
+
+        audio:hover {
+            transform: scale(1.03);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #666;
+            margin-top: 3rem;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            th {
+                font-size: 0.8rem;
+                padding: 0.8rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1>MSCL-VC Demo</h1>
-        <p>This demo presents four groups of audio conversions, each featuring the Source and target audio, plus
+        <h1>Voice Conversion Demo</h1>
+        <p>This demo presents four groups of audio conversions, each featuring the original and target audio, plus<br>
             synthesized audio from six different systems.</p>
     </header>
 
-    <!-- 每个组的展示部分 -->
-
-    <!-- Female-Female:p299_082_to_p233_065 -->
+    <!-- Female-Female -->
     <section>
-        <h2>Female-Female:p299_082_to_p233_065</h2>
+        <h2>Female-Female: p299_082 → p233_065</h2>
         <table>
             <tr>
-                <th>Source</th>
+                <th>Original</th>
                 <th>Target</th>
                 <th>BetaVAE-VC</th>
-                <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
                 <th>TriAAN-VC</th>
                 <th>LIMI-VC</th>
+                <th>CLESSR-VC</th>
                 <th>Proposed</th>
             </tr>
             <tr>
                 <td><audio controls src="audio/FF_orig.wav"></audio></td>
                 <td><audio controls src="audio/FF_tgt.wav"></audio></td>
                 <td><audio controls src="audio/FF_BetaVAE-VC.wav"></audio></td>
-                <td><audio controls src="audio/FF_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/FF_SRD-VC.wav"></audio></td>
                 <td><audio controls src="audio/FF_TriAAN-VC.wav"></audio></td>
                 <td><audio controls src="audio/FF_LIMI-VC.wav"></audio></td>
+                <td><audio controls src="audio/FF_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/FF_Proposed.wav"></audio></td>
             </tr>
         </table>
     </section>
 
-    <!-- Female-Male:p230_063_to_p376_056 -->
+    <!-- Female-Male -->
     <section>
-        <h2>Female-Male:p230_063_to_p376_056</h2>
+        <h2>Female-Male: p230_063 → p376_056</h2>
         <table>
             <tr>
-                <th>Source</th>
+                <th>Original</th>
                 <th>Target</th>
                 <th>BetaVAE-VC</th>
-                <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
                 <th>TriAAN-VC</th>
                 <th>LIMI-VC</th>
+                <th>CLESSR-VC</th>
                 <th>Proposed</th>
             </tr>
             <tr>
                 <td><audio controls src="audio/FM_orig.wav"></audio></td>
                 <td><audio controls src="audio/FM_tgt.wav"></audio></td>
                 <td><audio controls src="audio/FM_BetaVAE-VC.wav"></audio></td>
-                <td><audio controls src="audio/FM_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/FM_SRD-VC.wav"></audio></td>
                 <td><audio controls src="audio/FM_TriAAN-VC.wav"></audio></td>
                 <td><audio controls src="audio/FM_LIMI-VC.wav"></audio></td>
+                <td><audio controls src="audio/FM_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/FM_Proposed.wav"></audio></td>
             </tr>
         </table>
     </section>
 
-    <!-- Male-Female:p226_013_to_p233_054 -->
+    <!-- Male-Female -->
     <section>
-        <h2>Male-Female:p226_013_to_p233_054</h2>
+        <h2>Male-Female: p226_013 → p233_054</h2>
         <table>
             <tr>
-                <th>Source</th>
+                <th>Original</th>
                 <th>Target</th>
                 <th>BetaVAE-VC</th>
-                <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
                 <th>TriAAN-VC</th>
                 <th>LIMI-VC</th>
+                <th>CLESSR-VC</th>
                 <th>Proposed</th>
             </tr>
             <tr>
                 <td><audio controls src="audio/MF_orig.wav"></audio></td>
                 <td><audio controls src="audio/MF_tgt.wav"></audio></td>
                 <td><audio controls src="audio/MF_BetaVAE-VC.wav"></audio></td>
-                <td><audio controls src="audio/MF_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/MF_SRD-VC.wav"></audio></td>
                 <td><audio controls src="audio/MF_TriAAN-VC.wav"></audio></td>
                 <td><audio controls src="audio/MF_LIMI-VC.wav"></audio></td>
+                <td><audio controls src="audio/MF_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/MF_Proposed.wav"></audio></td>
             </tr>
         </table>
     </section>
 
-    <!-- Male-Male:p227_013_to_p376_040 -->
+    <!-- Male-Male -->
     <section>
-        <h2>Male-Male:p227_013_to_p376_040</h2>
+        <h2>Male-Male: p227_013 → p376_040</h2>
         <table>
             <tr>
-                <th>Source</th>
+                <th>Original</th>
                 <th>Target</th>
                 <th>BetaVAE-VC</th>
-                <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
                 <th>TriAAN-VC</th>
                 <th>LIMI-VC</th>
+                <th>CLESSR-VC</th>
                 <th>Proposed</th>
             </tr>
             <tr>
                 <td><audio controls src="audio/MM_orig.wav"></audio></td>
                 <td><audio controls src="audio/MM_tgt.wav"></audio></td>
                 <td><audio controls src="audio/MM_BetaVAE-VC.wav"></audio></td>
-                <td><audio controls src="audio/MM_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/MM_SRD-VC.wav"></audio></td>
                 <td><audio controls src="audio/MM_TriAAN-VC.wav"></audio></td>
                 <td><audio controls src="audio/MM_LIMI-VC.wav"></audio></td>
+                <td><audio controls src="audio/MM_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/MM_Proposed.wav"></audio></td>
             </tr>
         </table>
@@ -127,8 +246,6 @@
     <footer>
         <p>© 2025 Your Name | <a href="https://github.com/wyhnew/VC-demo">GitHub Repository</a></p>
     </footer>
-
-    <script src="script.js"></script> <!-- 如果有JS，则引入 -->
 </body>
 
 </html>
