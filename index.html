@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MSCL-VC Demo</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 新增优化样式 */
+        .audio-group {
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .audio-table {
+            width: 100%;
+            min-width: 900px;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        .audio-table th,
+        .audio-table td {
+            padding: 0.5rem;
+            text-align: center;
+            vertical-align: top;
+            width: 12.5%; /* 8列平均分配宽度 */
+        }
+
+        audio {
+            width: 100%;
+            max-width: 150px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            color: #333;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .audio-table th {
+                font-size: 0.8rem;
+            }
+            
+            h2 {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -13,6 +58,8 @@
         <p>This demo presents four groups of audio conversions, each featuring the Source and target audio, plus
             synthesized audio from six different systems.</p>
     </header>
+
+ </header>
 
     <!-- Female-Female Group -->
     <section>
