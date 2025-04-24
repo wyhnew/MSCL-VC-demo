@@ -1,33 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>MSCL-VC Demo</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: center;
-            vertical-align: middle;
-        }
-        .type-column {
-            width: 120px;
-            background-color: #f5f5f5;
-        }
-        audio {
-            width: 160px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>MSCL-VC Demo</h1>
-        <p>This demo presents four groups of audio conversions with explicit source/target separation.</p>
+        <p>This demo presents four groups of audio conversions, each featuring the Source and target audio, plus
+            synthesized audio from six different systems.</p>
     </header>
 
     <!-- Female-Female Group -->
@@ -35,8 +19,10 @@
         <h2>Female-Female:p299_082_to_p233_065</h2>
         <table>
             <tr>
-                <th class="type-column">Type</th>
-                <th>Original</th>
+                <th rowspan="2">Source/Target</th>
+                <th colspan="6">Synthesized Systems</th>
+            </tr>
+            <tr>
                 <th>BetaVAE-VC</th>
                 <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
@@ -44,9 +30,7 @@
                 <th>LIMI-VC</th>
                 <th>Proposed</th>
             </tr>
-            <!-- 源语音行 -->
             <tr>
-                <td class="type-column">Source</td>
                 <td><audio controls src="audio/FF_orig.wav"></audio></td>
                 <td><audio controls src="audio/FF_BetaVAE-VC.wav"></audio></td>
                 <td><audio controls src="audio/FF_CLESSR-VC.wav"></audio></td>
@@ -55,11 +39,9 @@
                 <td><audio controls src="audio/FF_LIMI-VC.wav"></audio></td>
                 <td><audio controls src="audio/FF_Proposed.wav"></audio></td>
             </tr>
-            <!-- 目标语音行 -->
             <tr>
-                <td class="type-column">Target</td>
                 <td><audio controls src="audio/FF_tgt.wav"></audio></td>
-                <td colspan="6" style="background-color: #f9f9f9;">Reference Audio</td>
+                <td colspan="6"></td>
             </tr>
         </table>
     </section>
@@ -69,8 +51,10 @@
         <h2>Female-Male:p230_063_to_p376_056</h2>
         <table>
             <tr>
-                <th class="type-column">Type</th>
-                <th>Original</th>
+                <th rowspan="2">Source/Target</th>
+                <th colspan="6">Synthesized Systems</th>
+            </tr>
+            <tr>
                 <th>BetaVAE-VC</th>
                 <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
@@ -79,7 +63,6 @@
                 <th>Proposed</th>
             </tr>
             <tr>
-                <td class="type-column">Source</td>
                 <td><audio controls src="audio/FM_orig.wav"></audio></td>
                 <td><audio controls src="audio/FM_BetaVAE-VC.wav"></audio></td>
                 <td><audio controls src="audio/FM_CLESSR-VC.wav"></audio></td>
@@ -89,9 +72,8 @@
                 <td><audio controls src="audio/FM_Proposed.wav"></audio></td>
             </tr>
             <tr>
-                <td class="type-column">Target</td>
                 <td><audio controls src="audio/FM_tgt.wav"></audio></td>
-                <td colspan="6" style="background-color: #f9f9f9;">Reference Audio</td>
+                <td colspan="6"></td>
             </tr>
         </table>
     </section>
@@ -101,8 +83,10 @@
         <h2>Male-Female:p226_013_to_p233_054</h2>
         <table>
             <tr>
-                <th class="type-column">Type</th>
-                <th>Original</th>
+                <th rowspan="2">Source/Target</th>
+                <th colspan="6">Synthesized Systems</th>
+            </tr>
+            <tr>
                 <th>BetaVAE-VC</th>
                 <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
@@ -111,7 +95,6 @@
                 <th>Proposed</th>
             </tr>
             <tr>
-                <td class="type-column">Source</td>
                 <td><audio controls src="audio/MF_orig.wav"></audio></td>
                 <td><audio controls src="audio/MF_BetaVAE-VC.wav"></audio></td>
                 <td><audio controls src="audio/MF_CLESSR-VC.wav"></audio></td>
@@ -121,9 +104,8 @@
                 <td><audio controls src="audio/MF_Proposed.wav"></audio></td>
             </tr>
             <tr>
-                <td class="type-column">Target</td>
                 <td><audio controls src="audio/MF_tgt.wav"></audio></td>
-                <td colspan="6" style="background-color: #f9f9f9;">Reference Audio</td>
+                <td colspan="6"></td>
             </tr>
         </table>
     </section>
@@ -133,8 +115,10 @@
         <h2>Male-Male:p227_013_to_p376_040</h2>
         <table>
             <tr>
-                <th class="type-column">Type</th>
-                <th>Original</th>
+                <th rowspan="2">Source/Target</th>
+                <th colspan="6">Synthesized Systems</th>
+            </tr>
+            <tr>
                 <th>BetaVAE-VC</th>
                 <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
@@ -143,7 +127,6 @@
                 <th>Proposed</th>
             </tr>
             <tr>
-                <td class="type-column">Source</td>
                 <td><audio controls src="audio/MM_orig.wav"></audio></td>
                 <td><audio controls src="audio/MM_BetaVAE-VC.wav"></audio></td>
                 <td><audio controls src="audio/MM_CLESSR-VC.wav"></audio></td>
@@ -153,11 +136,17 @@
                 <td><audio controls src="audio/MM_Proposed.wav"></audio></td>
             </tr>
             <tr>
-                <td class="type-column">Target</td>
                 <td><audio controls src="audio/MM_tgt.wav"></audio></td>
-                <td colspan="6" style="background-color: #f9f9f9;">Reference Audio</td>
+                <td colspan="6"></td>
             </tr>
         </table>
     </section>
+
+    <footer>
+        <p>© 2025 Your Name | <a href="https://github.com/wyhnew/VC-demo">GitHub Repository</a></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
