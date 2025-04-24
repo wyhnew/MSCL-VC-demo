@@ -1,128 +1,72 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voice Conversion Demo</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --background-color: #f8f9fa;
-            --text-color: #333;
-        }
-
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            color: #333;
         }
 
         header {
-            text-align: center;
-            padding: 2rem 0;
-            background: var(--primary-color);
+            background-color: #282c34;
             color: white;
-            border-radius: 10px;
-            margin-bottom: 2rem;
+            padding: 20px;
+            text-align: center;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
+        header h1 {
+            margin: 0;
         }
 
         section {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            overflow-x: auto;
+            margin: 20px;
         }
 
         h2 {
-            color: var(--primary-color);
-            font-size: 1.4rem;
-            margin: 0 0 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--secondary-color);
-        }
-
-        table {
-            width: 100%;
-            min-width: 900px;
-            border-collapse: collapse;
-            table-layout: fixed;
-        }
-
-        th,
-        td {
-            padding: 1rem;
-            text-align: center;
-            vertical-align: middle;
-            width: 12.5%;
-        }
-
-        th {
-            background: var(--primary-color);
+            background-color: #4CAF50;
             color: white;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
+            padding: 10px;
+            border-radius: 5px;
         }
 
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
+        .audio-table {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .audio-column {
+            width: 48%;
+            text-align: center;
+            margin-bottom: 10px;
         }
 
         audio {
             width: 100%;
-            max-width: 180px;
-            transition: transform 0.2s;
-        }
-
-        audio:hover {
-            transform: scale(1.03);
+            margin: 5px 0;
         }
 
         footer {
+            background-color: #282c34;
+            color: white;
             text-align: center;
-            padding: 2rem 0;
-            color: #666;
-            margin-top: 3rem;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
-        a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            color: #2980b9;
-        }
-
-        /* 响应式设计 */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.2rem;
-            }
-
-            th {
-                font-size: 0.8rem;
-                padding: 0.8rem;
+            .audio-column {
+                width: 100%;
             }
         }
     </style>
@@ -131,121 +75,171 @@
 <body>
     <header>
         <h1>Voice Conversion Demo</h1>
-        <p>This demo presents four groups of audio conversions, each featuring the original and target audio, plus<br>
+        <p>This demo presents four groups of audio conversions, each featuring the original and target audio, plus
             synthesized audio from six different systems.</p>
     </header>
 
-    <!-- Female-Female -->
+    <!-- Female-Female:p299_082_to_p233_065 -->
     <section>
-        <h2>Female-Female: p299_082 → p233_065</h2>
-        <table>
-            <tr>
-                <th>Original</th>
-                <th>Target</th>
-                <th>BetaVAE-VC</th>
-                <th>SRD-VC</th>
-                <th>TriAAN-VC</th>
-                <th>LIMI-VC</th>
-                <th>CLESSR-VC</th>
-                <th>Proposed</th>
-            </tr>
-            <tr>
-                <td><audio controls src="audio/FF_orig.wav"></audio></td>
-                <td><audio controls src="audio/FF_tgt.wav"></audio></td>
-                <td><audio controls src="audio/FF_BetaVAE-VC.wav"></audio></td>
-                <td><audio controls src="audio/FF_SRD-VC.wav"></audio></td>
-                <td><audio controls src="audio/FF_TriAAN-VC.wav"></audio></td>
-                <td><audio controls src="audio/FF_LIMI-VC.wav"></audio></td>
-                <td><audio controls src="audio/FF_CLESSR-VC.wav"></audio></td>
-                <td><audio controls src="audio/FF_Proposed.wav"></audio></td>
-            </tr>
-        </table>
+        <h2>Female-Female:p299_082_to_p233_065</h2>
+        <div class="audio-table">
+            <div class="audio-column">
+                <audio controls src="audio/FF_orig.wav"></audio>
+                <p>Original</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FF_tgt.wav"></audio>
+                <p>Target</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FF_BetaVAE-VC.wav"></audio>
+                <p>BetaVAE-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FF_SRD-VC.wav"></audio>
+                <p>SRD-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FF_TriAAN-VC.wav"></audio>
+                <p>TriAAN-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FF_LIMI-VC.wav"></audio>
+                <p>LIMI-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FF_CLESSR-VC.wav"></audio>
+                <p>CLESSR-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FF_Proposed.wav"></audio>
+                <p>Proposed</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Female-Male -->
+    <!-- Female-Male:p230_063_to_p376_056 -->
     <section>
-        <h2>Female-Male: p230_063 → p376_056</h2>
-        <table>
-            <tr>
-                <th>Original</th>
-                <th>Target</th>
-                <th>BetaVAE-VC</th>
-                <th>SRD-VC</th>
-                <th>TriAAN-VC</th>
-                <th>LIMI-VC</th>
-                <th>CLESSR-VC</th>
-                <th>Proposed</th>
-            </tr>
-            <tr>
-                <td><audio controls src="audio/FM_orig.wav"></audio></td>
-                <td><audio controls src="audio/FM_tgt.wav"></audio></td>
-                <td><audio controls src="audio/FM_BetaVAE-VC.wav"></audio></td>
-                <td><audio controls src="audio/FM_SRD-VC.wav"></audio></td>
-                <td><audio controls src="audio/FM_TriAAN-VC.wav"></audio></td>
-                <td><audio controls src="audio/FM_LIMI-VC.wav"></audio></td>
-                <td><audio controls src="audio/FM_CLESSR-VC.wav"></audio></td>
-                <td><audio controls src="audio/FM_Proposed.wav"></audio></td>
-            </tr>
-        </table>
+        <h2>Female-Male:p230_063_to_p376_056</h2>
+        <div class="audio-table">
+            <div class="audio-column">
+                <audio controls src="audio/FM_orig.wav"></audio>
+                <p>Original</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FM_tgt.wav"></audio>
+                <p>Target</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FM_BetaVAE-VC.wav"></audio>
+                <p>BetaVAE-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FM_SRD-VC.wav"></audio>
+                <p>SRD-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FM_TriAAN-VC.wav"></audio>
+                <p>TriAAN-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FM_LIMI-VC.wav"></audio>
+                <p>LIMI-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FM_CLESSR-VC.wav"></audio>
+                <p>CLESSR-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/FM_Proposed.wav"></audio>
+                <p>Proposed</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Male-Female -->
+    <!-- Male-Female:p226_013_to_p233_054 -->
     <section>
-        <h2>Male-Female: p226_013 → p233_054</h2>
-        <table>
-            <tr>
-                <th>Original</th>
-                <th>Target</th>
-                <th>BetaVAE-VC</th>
-                <th>SRD-VC</th>
-                <th>TriAAN-VC</th>
-                <th>LIMI-VC</th>
-                <th>CLESSR-VC</th>
-                <th>Proposed</th>
-            </tr>
-            <tr>
-                <td><audio controls src="audio/MF_orig.wav"></audio></td>
-                <td><audio controls src="audio/MF_tgt.wav"></audio></td>
-                <td><audio controls src="audio/MF_BetaVAE-VC.wav"></audio></td>
-                <td><audio controls src="audio/MF_SRD-VC.wav"></audio></td>
-                <td><audio controls src="audio/MF_TriAAN-VC.wav"></audio></td>
-                <td><audio controls src="audio/MF_LIMI-VC.wav"></audio></td>
-                <td><audio controls src="audio/MF_CLESSR-VC.wav"></audio></td>
-                <td><audio controls src="audio/MF_Proposed.wav"></audio></td>
-            </tr>
-        </table>
+        <h2>Male-Female:p226_013_to_p233_054</h2>
+        <div class="audio-table">
+            <div class="audio-column">
+                <audio controls src="audio/MF_orig.wav"></audio>
+                <p>Original</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MF_tgt.wav"></audio>
+                <p>Target</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MF_BetaVAE-VC.wav"></audio>
+                <p>BetaVAE-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MF_SRD-VC.wav"></audio>
+                <p>SRD-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MF_TriAAN-VC.wav"></audio>
+                <p>TriAAN-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MF_LIMI-VC.wav"></audio>
+                <p>LIMI-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MF_CLESSR-VC.wav"></audio>
+                <p>CLESSR-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MF_Proposed.wav"></audio>
+                <p>Proposed</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Male-Male -->
+    <!-- Male-Male:p227_013_to_p376_040 -->
     <section>
-        <h2>Male-Male: p227_013 → p376_040</h2>
-        <table>
-            <tr>
-                <th>Original</th>
-                <th>Target</th>
-                <th>BetaVAE-VC</th>
-                <th>SRD-VC</th>
-                <th>TriAAN-VC</th>
-                <th>LIMI-VC</th>
-                <th>CLESSR-VC</th>
-                <th>Proposed</th>
-            </tr>
-            <tr>
-                <td><audio controls src="audio/MM_orig.wav"></audio></td>
-                <td><audio controls src="audio/MM_tgt.wav"></audio></td>
-                <td><audio controls src="audio/MM_BetaVAE-VC.wav"></audio></td>
-                <td><audio controls src="audio/MM_SRD-VC.wav"></audio></td>
-                <td><audio controls src="audio/MM_TriAAN-VC.wav"></audio></td>
-                <td><audio controls src="audio/MM_LIMI-VC.wav"></audio></td>
-                <td><audio controls src="audio/MM_CLESSR-VC.wav"></audio></td>
-                <td><audio controls src="audio/MM_Proposed.wav"></audio></td>
-            </tr>
-        </table>
+        <h2>Male-Male:p227_013_to_p376_040</h2>
+        <div class="audio-table">
+            <div class="audio-column">
+                <audio controls src="audio/MM_orig.wav"></audio>
+                <p>Original</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MM_tgt.wav"></audio>
+                <p>Target</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MM_BetaVAE-VC.wav"></audio>
+                <p>BetaVAE-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MM_SRD-VC.wav"></audio>
+                <p>SRD-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MM_TriAAN-VC.wav"></audio>
+                <p>TriAAN-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MM_LIMI-VC.wav"></audio>
+                <p>LIMI-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MM_CLESSR-VC.wav"></audio>
+                <p>CLESSR-VC</p>
+            </div>
+            <div class="audio-column">
+                <audio controls src="audio/MM_Proposed.wav"></audio>
+                <p>Proposed</p>
+            </div>
+        </div>
     </section>
 
     <footer>
         <p>© 2025 Your Name | <a href="https://github.com/wyhnew/VC-demo">GitHub Repository</a></p>
     </footer>
+
+    <script src="script.js"></script> <!-- 如果有JS，则引入 -->
 </body>
 
 </html>
