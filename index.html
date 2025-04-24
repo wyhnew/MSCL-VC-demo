@@ -1,145 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>MSCL-VC Demo</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        audio {
-            width: 150px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>MSCL-VC Demo</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <header>
-        <h1>MSCL-VC Demo</h1>
-        <p>This demo presents four groups of audio conversions, each featuring the Source and Target audio, plus synthesized audio from six different systems.</p>
-    </header>
+  <header>
+    <h1>MSCL-VC Demo</h1>
+    <p>
+      This demo presents four groups of audio conversions, each featuring the
+      Source and Target audio, plus synthesized audio from six different systems.
+    </p>
+  </header>
 
-    <!-- Female-Female Group -->
-    <section>
-        <h2>Female-Female:p299_082_to_p233_065</h2>
-        <table>
-            <tr>
-                <th style="width: 15%">Source & Target</th>
-                <th>BetaVAE-VC</th>
-                <th>CLESSR-VC</th>
-                <th>SRD-VC</th>
-                <th>TriAAN-VC</th>
-                <th>LIMI-VC</th>
-                <th>Proposed</th>
-            </tr>
-            <tr>
-                <td>
-                    <audio controls src="audio/FF_orig.wav"></audio><br>
-                    <audio controls src="audio/FF_tgt.wav"></audio>
-                </td>
-                <td><audio controls src="audio/FF_BetaVAE-VC.wav"></audio></td>
-                <td><audio controls src="audio/FF_CLESSR-VC.wav"></audio></td>
-                <td><audio controls src="audio/FF_SRD-VC.wav"></audio></td>
-                <td><audio controls src="audio/FF_TriAAN-VC.wav"></audio></td>
-                <td><audio controls src="audio/FF_LIMI-VC.wav"></audio></td>
-                <td><audio controls src="audio/FF_Proposed.wav"></audio></td>
-            </tr>
-        </table>
-    </section>
+  <!-- Female → Female -->
+  <section>
+    <h2>Female-Female: p299_082_to_p233_065</h2>
+    <table>
+      <tr>
+        <th rowspan="2">Source / Target</th>
+        <th colspan="3">BetaVAE-VC / CLESSR-VC / SRD-VC</th>
+        <th colspan="3">TriAAN-VC / LIMI-VC / Proposed</th>
+      </tr>
+      <tr>
+        <td><audio controls src="audio/FF_BetaVAE-VC.wav"></audio></td>
+        <td><audio controls src="audio/FF_CLESSR-VC.wav"></audio></td>
+        <td><audio controls src="audio/FF_SRD-VC.wav"></audio></td>
+        <td><audio controls src="audio/FF_TriAAN-VC.wav"></audio></td>
+        <td><audio controls src="audio/FF_LIMI-VC.wav"></audio></td>
+        <td><audio controls src="audio/FF_Proposed.wav"></audio></td>
+      </tr>
+      <tr>
+        <td rowspan="2">
+          <!-- 用 <br> 分行 -->
+          <audio controls src="audio/FF_orig.wav"></audio><br />
+          <audio controls src="audio/FF_tgt.wav"></audio>
+        </td>
+        <!-- 第一行系统音频已在上面输出 -->
+      </tr>
+    </table>
+  </section>
 
-    <!-- 其他三个组的结构相同，只需替换文件名和标题 -->
-    <!-- Female-Male Group -->
-    <section>
-        <h2>Female-Male:p230_063_to_p376_056</h2>
-        <table>
-            <tr>
-                <th style="width: 15%">Source & Target</th>
-                <th>BetaVAE-VC</th>
-                <th>CLESSR-VC</th>
-                <th>SRD-VC</th>
-                <th>TriAAN-VC</th>
-                <th>LIMI-VC</th>
-                <th>Proposed</th>
-            </tr>
-            <tr>
-                <td>
-                    <audio controls src="audio/FM_orig.wav"></audio><br>
-                    <audio controls src="audio/FM_tgt.wav"></audio>
-                </td>
-                <td><audio controls src="audio/FM_BetaVAE-VC.wav"></audio></td>
-                <td><audio controls src="audio/FM_CLESSR-VC.wav"></audio></td>
-                <td><audio controls src="audio/FM_SRD-VC.wav"></audio></td>
-                <td><audio controls src="audio/FM_TriAAN-VC.wav"></audio></td>
-                <td><audio controls src="audio/FM_LIMI-VC.wav"></audio></td>
-                <td><audio controls src="audio/FM_Proposed.wav"></audio></td>
-            </tr>
-        </table>
-    </section>
+  <!-- Female → Male -->
+  <section>
+    <h2>Female-Male: p230_063_to_p376_056</h2>
+    <table>
+      <tr>
+        <th rowspan="2">Source / Target</th>
+        <th colspan="3">BetaVAE-VC / CLESSR-VC / SRD-VC</th>
+        <th colspan="3">TriAAN-VC / LIMI-VC / Proposed</th>
+      </tr>
+      <tr>
+        <td><audio controls src="audio/FM_BetaVAE-VC.wav"></audio></td>
+        <td><audio controls src="audio/FM_CLESSR-VC.wav"></audio></td>
+        <td><audio controls src="audio/FM_SRD-VC.wav"></audio></td>
+        <td><audio controls src="audio/FM_TriAAN-VC.wav"></audio></td>
+        <td><audio controls src="audio/FM_LIMI-VC.wav"></audio></td>
+        <td><audio controls src="audio/FM_Proposed.wav"></audio></td>
+      </tr>
+      <tr>
+        <td rowspan="2">
+          <audio controls src="audio/FM_orig.wav"></audio><br />
+          <audio controls src="audio/FM_tgt.wav"></audio>
+        </td>
+      </tr>
+    </table>
+  </section>
 
-    <!-- Male-Female Group -->
-    <section>
-        <h2>Male-Female:p226_013_to_p233_054</h2>
-        <table>
-            <tr>
-                <th style="width: 15%">Source & Target</th>
-                <th>BetaVAE-VC</th>
-                <th>CLESSR-VC</th>
-                <th>SRD-VC</th>
-                <th>TriAAN-VC</th>
-                <th>LIMI-VC</th>
-                <th>Proposed</th>
-            </tr>
-            <tr>
-                <td>
-                    <audio controls src="audio/MF_orig.wav"></audio><br>
-                    <audio controls src="audio/MF_tgt.wav"></audio>
-                </td>
-                <td><audio controls src="audio/MF_BetaVAE-VC.wav"></audio></td>
-                <td><audio controls src="audio/MF_CLESSR-VC.wav"></audio></td>
-                <td><audio controls src="audio/MF_SRD-VC.wav"></audio></td>
-                <td><audio controls src="audio/MF_TriAAN-VC.wav"></audio></td>
-                <td><audio controls src="audio/MF_LIMI-VC.wav"></audio></td>
-                <td><audio controls src="audio/MF_Proposed.wav"></audio></td>
-            </tr>
-        </table>
-    </section>
+  <!-- Male → Female -->
+  <section>
+    <h2>Male-Female: p226_013_to_p233_054</h2>
+    <table>
+      <tr>
+        <th rowspan="2">Source / Target</th>
+        <th colspan="3">BetaVAE-VC / CLESSR-VC / SRD-VC</th>
+        <th colspan="3">TriAAN-VC / LIMI-VC / Proposed</th>
+      </tr>
+      <tr>
+        <td><audio controls src="audio/MF_BetaVAE-VC.wav"></audio></td>
+        <td><audio controls src="audio/MF_CLESSR-VC.wav"></audio></td>
+        <td><audio controls src="audio/MF_SRD-VC.wav"></audio></td>
+        <td><audio controls src="audio/MF_TriAAN-VC.wav"></audio></td>
+        <td><audio controls src="audio/MF_LIMI-VC.wav"></audio></td>
+        <td><audio controls src="audio/MF_Proposed.wav"></audio></td>
+      </tr>
+      <tr>
+        <td rowspan="2">
+          <audio controls src="audio/MF_orig.wav"></audio><br />
+          <audio controls src="audio/MF_tgt.wav"></audio>
+        </td>
+      </tr>
+    </table>
+  </section>
 
-    <!-- Male-Male Group -->
-    <section>
-        <h2>Male-Male:p227_013_to_p376_040</h2>
-        <table>
-            <tr>
-                <th style="width: 15%">Source & Target</th>
-                <th>BetaVAE-VC</th>
-                <th>CLESSR-VC</th>
-                <th>SRD-VC</th>
-                <th>TriAAN-VC</th>
-                <th>LIMI-VC</th>
-                <th>Proposed</th>
-            </tr>
-            <tr>
-                <td>
-                    <audio controls src="audio/MM_orig.wav"></audio><br>
-                    <audio controls src="audio/MM_tgt.wav"></audio>
-                </td>
-                <td><audio controls src="audio/MM_BetaVAE-VC.wav"></audio></td>
-                <td><audio controls src="audio/MM_CLESSR-VC.wav"></audio></td>
-                <td><audio controls src="audio/MM_SRD-VC.wav"></audio></td>
-                <td><audio controls src="audio/MM_TriAAN-VC.wav"></audio></td>
-                <td><audio controls src="audio/MM_LIMI-VC.wav"></audio></td>
-                <td><audio controls src="audio/MM_Proposed.wav"></audio></td>
-            </tr>
-        </table>
-    </section>
+  <!-- Male → Male -->
+  <section>
+    <h2>Male-Male: p227_013_to_p376_040</h2>
+    <table>
+      <tr>
+        <th rowspan="2">Source / Target</th>
+        <th colspan="3">BetaVAE-VC / CLESSR-VC / SRD-VC</th>
+        <th colspan="3">TriAAN-VC / LIMI-VC / Proposed</th>
+      </tr>
+      <tr>
+        <td><audio controls src="audio/MM_BetaVAE-VC.wav"></audio></td>
+        <td><audio controls src="audio/MM_CLESSR-VC.wav"></audio></td>
+        <td><audio controls src="audio/MM_SRD-VC.wav"></audio></td>
+        <td><audio controls src="audio/MM_TriAAN-VC.wav"></audio></td>
+        <td><audio controls src="audio/MM_LIMI-VC.wav"></audio></td>
+        <td><audio controls src="audio/MM_Proposed.wav"></audio></td>
+      </tr>
+      <tr>
+        <td rowspan="2">
+          <audio controls src="audio/MM_orig.wav"></audio><br />
+          <audio controls src="audio/MM_tgt.wav"></audio>
+        </td>
+      </tr>
+    </table>
+  </section>
 
-    <footer>
-        <p>© 2025 Your Name | <a href="https://github.com/wyhnew/VC-demo">GitHub Repository</a></p>
-    </footer>
+  <footer>
+    <p>© 2025 Your Name | <a href="https://github.com/wyhnew/VC-demo">GitHub Repository</a></p>
+  </footer>
 </body>
+
 </html>
