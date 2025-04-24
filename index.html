@@ -1,55 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MSCL-VC Demo</title>
-    <style>
-        /* 新增优化样式 */
-        .audio-group {
-            margin: 2rem 0;
-            overflow-x: auto;
-        }
-
-        .audio-table {
-            width: 100%;
-            min-width: 900px;
-            table-layout: fixed;
-            border-collapse: collapse;
-        }
-
-        .audio-table th,
-        .audio-table td {
-            padding: 0.5rem;
-            text-align: center;
-            vertical-align: top;
-            width: 12.5%; /* 8列平均分配宽度 */
-        }
-
-        audio {
-            width: 100%;
-            max-width: 150px;
-            display: block;
-            margin: 0 auto;
-        }
-
-        h2 {
-            font-size: 1.2rem;
-            margin: 1rem 0;
-            color: #333;
-        }
-
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .audio-table th {
-                font-size: 0.8rem;
-            }
-            
-            h2 {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -59,17 +14,15 @@
             synthesized audio from six different systems.</p>
     </header>
 
- </header>
+    <!-- 每个组的展示部分 -->
 
-    <!-- Female-Female Group -->
+    <!-- Female-Female:p299_082_to_p233_065 -->
     <section>
         <h2>Female-Female:p299_082_to_p233_065</h2>
         <table>
             <tr>
-                <th rowspan="2">Source/Target</th>
-                <th colspan="6">Synthesized Systems</th>
-            </tr>
-            <tr>
+                <th>Source</th>
+                <th>Target</th>
                 <th>BetaVAE-VC</th>
                 <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
@@ -79,6 +32,7 @@
             </tr>
             <tr>
                 <td><audio controls src="audio/FF_orig.wav"></audio></td>
+                <td><audio controls src="audio/FF_tgt.wav"></audio></td>
                 <td><audio controls src="audio/FF_BetaVAE-VC.wav"></audio></td>
                 <td><audio controls src="audio/FF_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/FF_SRD-VC.wav"></audio></td>
@@ -86,22 +40,16 @@
                 <td><audio controls src="audio/FF_LIMI-VC.wav"></audio></td>
                 <td><audio controls src="audio/FF_Proposed.wav"></audio></td>
             </tr>
-            <tr>
-                <td><audio controls src="audio/FF_tgt.wav"></audio></td>
-                <td colspan="6"></td>
-            </tr>
         </table>
     </section>
 
-    <!-- Female-Male Group -->
+    <!-- Female-Male:p230_063_to_p376_056 -->
     <section>
         <h2>Female-Male:p230_063_to_p376_056</h2>
         <table>
             <tr>
-                <th rowspan="2">Source/Target</th>
-                <th colspan="6">Synthesized Systems</th>
-            </tr>
-            <tr>
+                <th>Source</th>
+                <th>Target</th>
                 <th>BetaVAE-VC</th>
                 <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
@@ -111,6 +59,7 @@
             </tr>
             <tr>
                 <td><audio controls src="audio/FM_orig.wav"></audio></td>
+                <td><audio controls src="audio/FM_tgt.wav"></audio></td>
                 <td><audio controls src="audio/FM_BetaVAE-VC.wav"></audio></td>
                 <td><audio controls src="audio/FM_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/FM_SRD-VC.wav"></audio></td>
@@ -118,22 +67,16 @@
                 <td><audio controls src="audio/FM_LIMI-VC.wav"></audio></td>
                 <td><audio controls src="audio/FM_Proposed.wav"></audio></td>
             </tr>
-            <tr>
-                <td><audio controls src="audio/FM_tgt.wav"></audio></td>
-                <td colspan="6"></td>
-            </tr>
         </table>
     </section>
 
-    <!-- Male-Female Group -->
+    <!-- Male-Female:p226_013_to_p233_054 -->
     <section>
         <h2>Male-Female:p226_013_to_p233_054</h2>
         <table>
             <tr>
-                <th rowspan="2">Source/Target</th>
-                <th colspan="6">Synthesized Systems</th>
-            </tr>
-            <tr>
+                <th>Source</th>
+                <th>Target</th>
                 <th>BetaVAE-VC</th>
                 <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
@@ -143,6 +86,7 @@
             </tr>
             <tr>
                 <td><audio controls src="audio/MF_orig.wav"></audio></td>
+                <td><audio controls src="audio/MF_tgt.wav"></audio></td>
                 <td><audio controls src="audio/MF_BetaVAE-VC.wav"></audio></td>
                 <td><audio controls src="audio/MF_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/MF_SRD-VC.wav"></audio></td>
@@ -150,22 +94,16 @@
                 <td><audio controls src="audio/MF_LIMI-VC.wav"></audio></td>
                 <td><audio controls src="audio/MF_Proposed.wav"></audio></td>
             </tr>
-            <tr>
-                <td><audio controls src="audio/MF_tgt.wav"></audio></td>
-                <td colspan="6"></td>
-            </tr>
         </table>
     </section>
 
-    <!-- Male-Male Group -->
+    <!-- Male-Male:p227_013_to_p376_040 -->
     <section>
         <h2>Male-Male:p227_013_to_p376_040</h2>
         <table>
             <tr>
-                <th rowspan="2">Source/Target</th>
-                <th colspan="6">Synthesized Systems</th>
-            </tr>
-            <tr>
+                <th>Source</th>
+                <th>Target</th>
                 <th>BetaVAE-VC</th>
                 <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
@@ -175,16 +113,13 @@
             </tr>
             <tr>
                 <td><audio controls src="audio/MM_orig.wav"></audio></td>
+                <td><audio controls src="audio/MM_tgt.wav"></audio></td>
                 <td><audio controls src="audio/MM_BetaVAE-VC.wav"></audio></td>
                 <td><audio controls src="audio/MM_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/MM_SRD-VC.wav"></audio></td>
                 <td><audio controls src="audio/MM_TriAAN-VC.wav"></audio></td>
                 <td><audio controls src="audio/MM_LIMI-VC.wav"></audio></td>
                 <td><audio controls src="audio/MM_Proposed.wav"></audio></td>
-            </tr>
-            <tr>
-                <td><audio controls src="audio/MM_tgt.wav"></audio></td>
-                <td colspan="6"></td>
             </tr>
         </table>
     </section>
@@ -193,7 +128,7 @@
         <p>© 2025 Your Name | <a href="https://github.com/wyhnew/VC-demo">GitHub Repository</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- 如果有JS，则引入 -->
 </body>
 
 </html>
