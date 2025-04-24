@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>MSCL-VC Demo</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        audio {
+            width: 150px;
+        }
+    </style>
 </head>
-
 <body>
     <header>
         <h1>MSCL-VC Demo</h1>
-        <p>This demo presents four groups of audio conversions, each featuring the Source and target audio, plus
-            synthesized audio from six different systems.</p>
+        <p>This demo presents four groups of audio conversions, each featuring the Source and Target audio, plus synthesized audio from six different systems.</p>
     </header>
 
-    <!-- 每个组的展示部分 -->
-
-    <!-- Female-Female:p299_082_to_p233_065 -->
+    <!-- Female-Female Group -->
     <section>
         <h2>Female-Female:p299_082_to_p233_065</h2>
         <table>
             <tr>
-                <th>Source</th>
-                <th>Target</th>
+                <th style="width: 15%">Source & Target</th>
                 <th>BetaVAE-VC</th>
                 <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
@@ -31,8 +39,10 @@
                 <th>Proposed</th>
             </tr>
             <tr>
-                <td><audio controls src="audio/FF_orig.wav"></audio></td>
-                <td><audio controls src="audio/FF_tgt.wav"></audio></td>
+                <td>
+                    <audio controls src="audio/FF_orig.wav"></audio><br>
+                    <audio controls src="audio/FF_tgt.wav"></audio>
+                </td>
                 <td><audio controls src="audio/FF_BetaVAE-VC.wav"></audio></td>
                 <td><audio controls src="audio/FF_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/FF_SRD-VC.wav"></audio></td>
@@ -43,13 +53,13 @@
         </table>
     </section>
 
-    <!-- Female-Male:p230_063_to_p376_056 -->
+    <!-- 其他三个组的结构相同，只需替换文件名和标题 -->
+    <!-- Female-Male Group -->
     <section>
         <h2>Female-Male:p230_063_to_p376_056</h2>
         <table>
             <tr>
-                <th>Source</th>
-                <th>Target</th>
+                <th style="width: 15%">Source & Target</th>
                 <th>BetaVAE-VC</th>
                 <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
@@ -58,8 +68,10 @@
                 <th>Proposed</th>
             </tr>
             <tr>
-                <td><audio controls src="audio/FM_orig.wav"></audio></td>
-                <td><audio controls src="audio/FM_tgt.wav"></audio></td>
+                <td>
+                    <audio controls src="audio/FM_orig.wav"></audio><br>
+                    <audio controls src="audio/FM_tgt.wav"></audio>
+                </td>
                 <td><audio controls src="audio/FM_BetaVAE-VC.wav"></audio></td>
                 <td><audio controls src="audio/FM_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/FM_SRD-VC.wav"></audio></td>
@@ -70,13 +82,12 @@
         </table>
     </section>
 
-    <!-- Male-Female:p226_013_to_p233_054 -->
+    <!-- Male-Female Group -->
     <section>
         <h2>Male-Female:p226_013_to_p233_054</h2>
         <table>
             <tr>
-                <th>Source</th>
-                <th>Target</th>
+                <th style="width: 15%">Source & Target</th>
                 <th>BetaVAE-VC</th>
                 <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
@@ -85,8 +96,10 @@
                 <th>Proposed</th>
             </tr>
             <tr>
-                <td><audio controls src="audio/MF_orig.wav"></audio></td>
-                <td><audio controls src="audio/MF_tgt.wav"></audio></td>
+                <td>
+                    <audio controls src="audio/MF_orig.wav"></audio><br>
+                    <audio controls src="audio/MF_tgt.wav"></audio>
+                </td>
                 <td><audio controls src="audio/MF_BetaVAE-VC.wav"></audio></td>
                 <td><audio controls src="audio/MF_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/MF_SRD-VC.wav"></audio></td>
@@ -97,13 +110,12 @@
         </table>
     </section>
 
-    <!-- Male-Male:p227_013_to_p376_040 -->
+    <!-- Male-Male Group -->
     <section>
         <h2>Male-Male:p227_013_to_p376_040</h2>
         <table>
             <tr>
-                <th>Source</th>
-                <th>Target</th>
+                <th style="width: 15%">Source & Target</th>
                 <th>BetaVAE-VC</th>
                 <th>CLESSR-VC</th>
                 <th>SRD-VC</th>
@@ -112,8 +124,10 @@
                 <th>Proposed</th>
             </tr>
             <tr>
-                <td><audio controls src="audio/MM_orig.wav"></audio></td>
-                <td><audio controls src="audio/MM_tgt.wav"></audio></td>
+                <td>
+                    <audio controls src="audio/MM_orig.wav"></audio><br>
+                    <audio controls src="audio/MM_tgt.wav"></audio>
+                </td>
                 <td><audio controls src="audio/MM_BetaVAE-VC.wav"></audio></td>
                 <td><audio controls src="audio/MM_CLESSR-VC.wav"></audio></td>
                 <td><audio controls src="audio/MM_SRD-VC.wav"></audio></td>
@@ -127,8 +141,5 @@
     <footer>
         <p>© 2025 Your Name | <a href="https://github.com/wyhnew/VC-demo">GitHub Repository</a></p>
     </footer>
-
-    <script src="script.js"></script> <!-- 如果有JS，则引入 -->
 </body>
-
 </html>
